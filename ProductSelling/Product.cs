@@ -9,10 +9,11 @@ namespace ProductSelling
 {
     internal class Product
     {
+        private string _name;
 
         public string? Name
         {
-            get => Name;
+            get => _name;
             set
             {
                 if (string.IsNullOrWhiteSpace(value) || value.Length == 0)
@@ -21,15 +22,17 @@ namespace ProductSelling
                 }
                 else
                 {
-                    Name = value;
+                    _name = value;
                 }
 
 
             }
         }
+
+        private int _price;
         public int Price
         {
-            get { return Price; }
+            get { return _price; }
 
 
 
@@ -37,7 +40,7 @@ namespace ProductSelling
             {
                 if (value > 1)
                 {
-                    Price = value;
+                    _price = value;
                 }
                 else
                 {
@@ -50,16 +53,17 @@ namespace ProductSelling
 
 
         }
+        private int _count;
         public int Count
         {
-            get { return Price; }
+            get { return _price; }
 
 
             set
             {
                 if (value > 0)
                 {
-                    Count = value;
+                    _count = value;
                 }
                 else
                 {
@@ -67,11 +71,11 @@ namespace ProductSelling
                 }
             }
         }
-        int TotalIncome=0;
-  
-        public Product(string name,int price,int count)
+        int TotalIncome = 0;
+
+        public Product(string name, int price, int count)
         {
-            if (string.IsNullOrWhiteSpace(Name)||Name.Length==0)
+            if (string.IsNullOrWhiteSpace(name) || name.Length == 0)
             {
                 Console.WriteLine("Cant assing name try again.");
             }
@@ -81,7 +85,7 @@ namespace ProductSelling
                 this.Price = price;
                 this.Count = count;
             }
-           
+
 
         }
 
@@ -102,10 +106,10 @@ namespace ProductSelling
 
         public void Sell()
         {
-            if (Count > 0)
+            if (_count > 0)
             {
-                Count -= 1;
-                TotalIncome += Price;
+                _count -= 1;
+                TotalIncome += _price;
             }
             else
             {

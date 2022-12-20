@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProductSelling
 {
-    internal class Milk:Product
+    internal class Milk : Product
     {
         public readonly int volume = 5;
         public readonly string Fatrate = "1,8%";
